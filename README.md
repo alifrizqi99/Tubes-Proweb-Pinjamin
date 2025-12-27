@@ -122,8 +122,8 @@ Edit file `.env` dan sesuaikan konfigurasi database:
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=pinjamin
+DB_PORT=3307
+DB_DATABASE=pinjamin_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
