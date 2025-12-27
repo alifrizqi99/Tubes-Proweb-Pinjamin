@@ -1,59 +1,407 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Pinjamin - Sistem Peminjaman Barang
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Pinjamin adalah aplikasi web berbasis Laravel untuk manajemen peminjaman barang. Aplikasi ini memfasilitasi proses peminjaman barang antara pemilik barang (costumer) dan peminjam dengan sistem persetujuan, notifikasi, dan pelacakan status peminjaman.
 
-## About Laravel
+## Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Untuk Peminjam (Borrower)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   ✅ Registrasi dan login dengan autentikasi
+-   🔍 Browse dan cari barang yang tersedia
+-   📝 Mengajukan peminjaman barang dengan upload foto KTM
+-   📊 Melihat status peminjaman (pending, approved, rejected)
+-   🔄 Request pengembalian barang
+-   📜 Riwayat peminjaman
+-   🔔 Notifikasi real-time untuk update peminjaman
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Untuk Pemilik Barang (Costumer/Owner)
 
-## Learning Laravel
+-   ➕ Menambah barang untuk dipinjamkan
+-   📷 Upload foto dan deskripsi barang
+-   📦 Manajemen stok dan ketersediaan barang
+-   ✔️ Approve/reject permintaan peminjaman
+-   ✔️ Approve pengembalian barang
+-   👀 Panel monitoring untuk melihat semua peminjaman
+-   🔔 Notifikasi untuk permintaan peminjaman baru
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Fitur Umum
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   🔐 Autentikasi dengan Laravel Passport (OAuth2)
+-   🎨 UI modern dengan Tailwind CSS dan DaisyUI
+-   📱 Responsive design
+-   🔄 Real-time notifications
+-   🔍 Search dan filter barang
+-   ⚡ Background job processing dengan Queue
 
-## Laravel Sponsors
+## Tech Stack
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Backend
 
-### Premium Partners
+-   **Laravel 12** - PHP Framework
+-   **Laravel Passport** - OAuth2 Authentication
+-   **MySQL/SQLite** - Database
+-   **Queue System** - Background job processing
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Frontend
 
-## Contributing
+-   **Vite** - Build tool & development server
+-   **Tailwind CSS 4** - Utility-first CSS framework
+-   **DaisyUI** - Tailwind CSS component library
+-   **Lucide Icons** - Icon library
+-   **Axios** - HTTP client
+-   **Blade Templates** - Server-side rendering
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Development Tools
 
-## Code of Conduct
+-   **Pest PHP** - Testing framework
+-   **Laravel Pint** - Code style fixer
+-   **Laravel Sail** - Docker development environment
+-   **Concurrently** - Run multiple commands simultaneously
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Requirements
 
-## Security Vulnerabilities
+Pastikan sistem Anda memiliki:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+-   **PHP** >= 8.2
+-   **Composer** >= 2.0
+-   **Node.js** >= 18.0
+-   **NPM** atau **PNPM**
+-   **MySQL** >= 8.0 atau **SQLite** >= 3.0
+-   **Git**
 
-## License
+## Instalasi
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 1. Clone Repository
+
+```bash
+git clone <repository-url>
+cd pinjamin-FE
+```
+
+### 2. Install Dependencies
+
+#### Menggunakan Composer Script (Recommended)
+
+```bash
+composer run setup
+```
+
+Script ini akan otomatis:
+
+-   Install PHP dependencies
+-   Copy `.env.example` ke `.env`
+-   Generate application key
+-   Run migrations
+-   Install Node.js dependencies
+-   Build frontend assets
+
+#### Manual Installation
+
+Jika Anda ingin install secara manual:
+
+```bash
+# Install PHP dependencies
+composer install
+
+# Copy environment file
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+
+# Install Node.js dependencies
+npm install
+# atau jika menggunakan pnpm
+pnpm install
+```
+
+### 3. Konfigurasi Database
+
+Edit file `.env` dan sesuaikan konfigurasi database:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=pinjamin
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Atau gunakan SQLite untuk development:
+
+```env
+DB_CONNECTION=sqlite
+DB_DATABASE=/absolute/path/to/database.sqlite
+```
+
+### 4. Setup Database
+
+```bash
+# Create database (jika menggunakan SQLite)
+touch database/database.sqlite
+
+# Run migrations
+php artisan migrate
+
+# (Optional) Seed database dengan data dummy
+php artisan db:seed
+```
+
+### 5. Setup Laravel Passport
+
+```bash
+# Install Passport
+php artisan passport:install
+
+# Generate encryption keys
+php artisan passport:keys
+```
+
+Setelah menjalankan `passport:install`, Anda akan mendapatkan Client ID dan Secret. Simpan informasi ini jika diperlukan untuk API authentication.
+
+### 6. Setup Storage
+
+```bash
+# Create symbolic link untuk public storage
+php artisan storage:link
+```
+
+### 7. Build Frontend Assets
+
+```bash
+# Development build
+npm run build
+
+# Atau untuk development dengan hot reload
+npm run dev
+```
+
+## Cara Menjalankan Aplikasi
+
+### Menggunakan Composer Script (Recommended)
+
+Jalankan semua service sekaligus (server, queue, logs, vite):
+
+```bash
+composer run dev
+```
+
+Script ini akan menjalankan:
+
+-   🌐 Laravel development server (`php artisan serve`) - Port 8000
+-   🔄 Queue worker (`php artisan queue:listen`)
+-   📋 Log viewer (`php artisan pail`)
+-   ⚡ Vite development server - Port 5173
+
+Aplikasi dapat diakses di: **http://localhost:8000**
+
+### Manual
+
+Jika Anda ingin menjalankan secara manual, buka 4 terminal berbeda:
+
+#### Terminal 1 - Laravel Server
+
+```bash
+php artisan serve
+```
+
+#### Terminal 2 - Queue Worker
+
+```bash
+php artisan queue:listen --tries=1
+```
+
+#### Terminal 3 - Log Viewer (Optional)
+
+```bash
+php artisan pail
+```
+
+#### Terminal 4 - Vite Development Server
+
+```bash
+npm run dev
+```
+
+### Production Build
+
+```bash
+# Build assets untuk production
+npm run build
+
+# Jalankan dengan web server (Apache/Nginx)
+# atau gunakan Laravel Octane untuk performa tinggi
+```
+
+## Struktur Database
+
+### Users Table
+
+-   `id` - Primary key
+-   `name` - Nama lengkap
+-   `email` - Email (unique)
+-   `nim` - Nomor Induk Mahasiswa
+-   `role` - Role user (`peminjam` atau `costumer`)
+-   `password` - Hashed password
+
+### Items Table
+
+-   `id` - Primary key
+-   `nama` - Nama barang
+-   `stok` - Jumlah stok tersedia
+-   `deskripsi` - Deskripsi barang
+-   `max_hari` - Maksimal hari peminjaman
+-   `gambar` - Path file gambar
+-   `user_id` - Foreign key ke users (pemilik)
+
+### Borrowings Table
+
+-   `id` - Primary key
+-   `peminjam_id` - Foreign key ke users (peminjam)
+-   `item_id` - Foreign key ke items
+-   `foto_ktm` - Path foto KTM peminjam
+-   `tanggal_pinjam` - Tanggal mulai pinjam
+-   `tanggal_kembali` - Tanggal deadline kembali
+-   `lama_hari` - Durasi peminjaman (hari)
+-   `tanggal_pengembalian_aktual` - Tanggal pengembalian sebenarnya
+-   `status` - Status peminjaman:
+    -   `pending` - Menunggu persetujuan
+    -   `approved` - Disetujui, sedang dipinjam
+    -   `rejected` - Ditolak
+    -   `returned` - Sudah dikembalikan
+    -   `cancelled` - Dibatalkan oleh peminjam
+    -   `return_pending` - Menunggu konfirmasi pengembalian
+-   `catatan` - Catatan peminjaman
+-   `kondisi` - Kondisi barang saat dikembalikan
+-   `foto_kondisi` - Foto kondisi barang
+-   `rating` - Rating peminjaman
+-   `alasan_penolakan` - Alasan jika ditolak
+
+### Notifications Table
+
+-   `id` - Primary key
+-   `user_id` - Foreign key ke users
+-   `type` - Tipe notifikasi
+-   `title` - Judul notifikasi
+-   `message` - Pesan notifikasi
+-   `read_at` - Timestamp dibaca
+-   `data` - JSON data tambahan
+
+## API Endpoints
+
+### Authentication
+
+```
+POST /login - Login user
+POST /register - Register user baru
+POST /logout - Logout user
+```
+
+### Items
+
+```
+GET  /api/items - List semua barang
+GET  /api/items/{id} - Detail barang
+GET  /api/items/my-items - Barang milik user
+GET  /api/items/search?q={query} - Search barang
+POST /api/items - Tambah barang baru (costumer only)
+PUT  /api/items/{id} - Update barang (owner only)
+DELETE /api/items/{id} - Hapus barang (owner only)
+```
+
+### Borrowings (Peminjaman)
+
+```
+GET  /api/borrowings - List peminjaman user
+GET  /api/borrowings/{id} - Detail peminjaman
+GET  /api/borrowings/history - Riwayat peminjaman
+POST /api/borrowings - Ajukan peminjaman baru
+POST /api/borrowings/{id}/cancel - Cancel peminjaman
+POST /api/borrowings/{id}/return - Request pengembalian
+POST /api/borrowings/{id}/approve - Approve peminjaman (owner)
+POST /api/borrowings/{id}/reject - Reject peminjaman (owner)
+POST /api/borrowings/{id}/approve-return - Approve pengembalian (owner)
+```
+
+### Notifications
+
+```
+GET  /api/notifications - List notifikasi
+GET  /api/notifications/unread-count - Jumlah notifikasi belum dibaca
+POST /api/notifications/mark-all-read - Tandai semua sebagai dibaca
+POST /api/notifications/{id}/mark-read - Tandai satu notifikasi dibaca
+DELETE /api/notifications/{id} - Hapus notifikasi
+```
+
+### Authentication Header
+
+Untuk API endpoints yang memerlukan autentikasi, sertakan token di header:
+
+```
+Authorization: Bearer {access_token}
+```
+
+## Struktur Folder
+
+```
+pinjamin-FE/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/      # Controllers untuk handle requests
+│   │   └── Middleware/        # Custom middleware
+│   ├── Models/                # Eloquent models
+│   └── Services/              # Business logic services
+├── database/
+│   ├── migrations/            # Database migrations
+│   └── seeders/               # Database seeders
+├── public/
+│   └── storage/               # Symlink untuk file uploads
+├── resources/
+│   ├── css/                   # Stylesheets
+│   ├── js/                    # JavaScript files
+│   └── views/                 # Blade templates
+├── routes/
+│   ├── web.php                # Web routes
+│   └── api.php                # API routes
+├── storage/
+│   ├── app/public/            # User uploaded files
+│   └── logs/                  # Application logs
+└── tests/                     # Test files
+```
+
+## Troubleshooting
+
+### Error: "No application encryption key has been specified"
+
+```bash
+php artisan key:generate
+```
+
+### Error: Storage link tidak bekerja
+
+```bash
+php artisan storage:link
+```
+
+### Error: Vite manifest not found
+
+```bash
+npm run build
+```
+
+### Error: Queue jobs tidak berjalan
+
+Pastikan queue worker berjalan:
+
+```bash
+php artisan queue:listen
+```
+
+### Error: Passport keys tidak ditemukan
+
+```bash
+php artisan passport:keys
+php artisan passport:install
+``
+```
