@@ -1,38 +1,5 @@
 # Pinjamin - Sistem Peminjaman Barang
 
-Pinjamin adalah aplikasi web berbasis Laravel untuk manajemen peminjaman barang. Aplikasi ini memfasilitasi proses peminjaman barang antara pemilik barang (costumer) dan peminjam dengan sistem persetujuan, notifikasi, dan pelacakan status peminjaman.
-
-## Fitur Utama
-
-### Untuk Peminjam (Borrower)
-
--   ✅ Registrasi dan login dengan autentikasi
--   🔍 Browse dan cari barang yang tersedia
--   📝 Mengajukan peminjaman barang dengan upload foto KTM
--   📊 Melihat status peminjaman (pending, approved, rejected)
--   🔄 Request pengembalian barang
--   📜 Riwayat peminjaman
--   🔔 Notifikasi real-time untuk update peminjaman
-
-### Untuk Pemilik Barang (Costumer/Owner)
-
--   ➕ Menambah barang untuk dipinjamkan
--   📷 Upload foto dan deskripsi barang
--   📦 Manajemen stok dan ketersediaan barang
--   ✔️ Approve/reject permintaan peminjaman
--   ✔️ Approve pengembalian barang
--   👀 Panel monitoring untuk melihat semua peminjaman
--   🔔 Notifikasi untuk permintaan peminjaman baru
-
-### Fitur Umum
-
--   🔐 Autentikasi dengan Laravel Passport (OAuth2)
--   🎨 UI modern dengan Tailwind CSS dan DaisyUI
--   📱 Responsive design
--   🔄 Real-time notifications
--   🔍 Search dan filter barang
--   ⚡ Background job processing dengan Queue
-
 ## Tech Stack
 
 ### Backend
